@@ -109,3 +109,4 @@ config/environments/*.local.yml
 .gitattributes
 
 spec/rails_helper.rb
+spec/*
