@@ -1,0 +1,20 @@
+vi:
+  manager: "QUẢN LÝ"
+  english: "Tiếng Anh"
+  welcome: "Xin chào !"
+  vietnamese: "Tiếng Việt"
+  manager_orders: "Quản lý đơn hàng"
+  status_order:
+    open: "Chờ xác nhận"
+    confirmed: "Đã xác nhận"
+  manager_products: "Quản lý sản phẩm"
+  product:
+    products: "Sản phẩm"
+    all_products: "Tất cả sản phẩm"
+    categories: "Danh mục"
+    add_product: "Thêm sản phẩm"
+  logout: "Thoát"
+  manager_accounts: "Quản lý tài khoản"
+  account:
+    accounts: "Tài khoản"
+    all_account: "Tất cả khách hàng"
