@@ -136,7 +136,7 @@ vi:
     description: "Mô tả :"
     quantity: "Số lượng :"
     category_name: "Loại :"
-    submit: "Tạo"
+    submit: "Lưu"
     success: "Tạo mới thành công"
     fail: "Tạo mới thất bại"
     add_category: "Thêm loại sản phẩm"
@@ -149,3 +149,11 @@ vi:
         price: "Giá"
         description: "Mô tả"
         quantity: "Số lượng"
+  edit_product:
+    edit: "Chỉnh sửa"
+    delete: "  Xóa"
+    you_sure: "Bạn có chắc chắn ?"
+    title: "CHỈNH SỬA SẢN PHẨM"
+    success: "chỉnh sửa thành công !"
+    fail: "chỉnh sửa thất bại !!"
+

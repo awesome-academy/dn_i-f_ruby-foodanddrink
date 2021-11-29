@@ -8,7 +8,7 @@ length_6: 6
 length_50: 50
 length:
   min_6: 6
-  max_20: 20
+  max_100: 100
   max_300: 300
 check_number: 0
 image:

@@ -12,7 +12,7 @@ class Product < ApplicationRecord
   validates :name, presence: true,
     length: {
       minimum: Settings.length.min_6,
-      maximum: Settings.length.max_20
+      maximum: Settings.length.max_100
     }
 
   validates :price, presence: true,
