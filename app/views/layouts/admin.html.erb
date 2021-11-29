@@ -13,6 +13,8 @@
     <link href="/assets/admin/css/custom.min.css" rel="stylesheet">
     <link href="/assets/admin/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="/assets/admin/css/toastr.css" rel="stylesheet"/>
+    <%= stylesheet_link_tag :admin %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body class="nav-md" >
     <div class="container body">
@@ -23,7 +25,7 @@
           </div>
         </div>
       </div>
-
+    <%= javascript_pack_tag :application %>
     <script src="/assets/admin/js/jquery.min.js"></script>
     <script src="/assets/admin/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/admin/js/custom.min.js"></script>

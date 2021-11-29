@@ -111,4 +111,5 @@ config/environments/*.local.yml
 spec/rails_helper.rb
 spec/*
 
-config/application.yml
+# Ignore application configuration
+/config/application.yml

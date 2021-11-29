@@ -5,6 +5,8 @@ en:
   status_order:
     open: "Open"
     confirmed: "Confirmed"
+    cancelled: "Cancelled"
+    disclaim: "Disclaim"
   manager_products: "Manager products"
   product:
     products: "Product"
@@ -30,6 +32,7 @@ en:
   add_to_cart: "Add to Cart"
   quantity: "Quantity"
   not_found: "not found"
+  you_sure: "Are you sure?"
   orders:
     fullname: "Full name"
     phone: "Phone"
@@ -39,7 +42,7 @@ en:
     action: "Action"
     all: "All Orders"
     view: "View"
-    delete: "Delete"
+    reject: "Reject"
     no_order: "No orders placed"
     created_order: " Order date"
     product_name: "Product"
@@ -49,9 +52,27 @@ en:
     total_price: "Total price"
     order_detail: "Order detail"
     total: "Total"
+    approve: "Approve"
+    reject_success: "Reject success!"
+    failed: "Failed!"
+    approve_success: "Approve success!"
+    cancel: "Cancel"
+    back: "Back"
+  views:
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"
   time:
     formats:
       own: "%H:%M:%S, %d %B %Y"
       default: "%d-%m-%Y"
       long: "%d %B, %Y"
       short: "%d %b"
+  order_mailer:
+    hello: "Hello %{name}"
+    content:
+      confirmed: " Your order will be packed and shipped. Information order:"
+      disclaim: " Sorry your order has been disclaim. Information order:"

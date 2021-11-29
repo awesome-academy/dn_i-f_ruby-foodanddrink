@@ -5,6 +5,8 @@ vi:
   status_order:
     open: "Chờ xác nhận"
     confirmed: "Đã xác nhận"
+    cancelled: "Đã hủy"
+    disclaim: "Đã từ chối"
   manager_products: "Quản lý sản phẩm"
   product:
     products: "Sản phẩm"
@@ -30,6 +32,7 @@ vi:
   policy: "Policy"
   next: "Next: "
   add_to_cart: "Add to Cart"
+  you_sure: "Bạn có chắc chắn ?"
   orders:
     fullname: "Họ tên"
     phone: "Điện thoại"
@@ -39,7 +42,7 @@ vi:
     action: "Hành động"
     all: "Tất cả đơn hàng"
     view: "Xem"
-    delete: "Xóa"
+    reject: "Từ chối"
     no_order: "Không có đơn hàng được đặt "
     created_order: "Ngày đặt hàng"
     product_name: "Sản phẩm"
@@ -49,6 +52,19 @@ vi:
     total_price: "Tổng"
     order_detail: "Chi tiết đơn hàng"
     total: "Tổng tiền"
+    approve: "Chấp thuận"
+    reject_success: "Đã từ chối đơn hàng!"
+    failed: "Đã có lỗi xảy ra!"
+    approve_success: "Thành công!"
+    cancel: "Hủy"
+    back: "Quay lại"
+  views:
+    pagination:
+      first: "« Đầu"
+      last: "Cuối »"
+      previous: "‹ Trước"
+      next: "Sau ›"
+      truncate: "…"
   number:
     currency:
       format:
@@ -61,3 +77,9 @@ vi:
       default: "%d-%m-%Y"
       long: "%d %B, %Y"
       short: "%d %b"
+  order_mailer:
+    hello: "Xin chào %{name}"
+    title: "Bạn nhận được một thông báo từ bên nhà cung cấp !"
+    content:
+      confirmed: " Đơn hàng của bạn đã được xác nhận. Thông tin đơn hàng:"
+      disclaim: " Rất tiếc đơn hàng của bạn đã bị hủy. Thông tin đơn hàng:"

@@ -1,5 +1,6 @@
 class Admin::OrdersController < Admin::AdminsController
-  before_action :load_order, only: :show
+  before_action :load_order, :load_order_details,
+                except: %i(index)
 
   def index
     @title = t "orders.all"
@@ -10,8 +11,37 @@ class Admin::OrdersController < Admin::AdminsController
 
   def show
     @title = t "orders.order_detail"
-    @order_detail = @order.order_details.includes(:product)
-    @total = total_order @order_detail
+  end
+
+  def approve
+    ActiveRecord::Base.transaction do
+      if @order.open?
+        update_quantity_when_approve
+        @order.confirmed!
+        send_mail
+        flash[:success] = t "orders.approve_success"
+      else
+        flash[:danger] = t "orders.failed"
+      end
+    end
+  rescue ActiveRecord::RecordInvalid
+    flash[:danger] = t "orders.failed"
+  ensure
+    redirect_back(fallback_location: admin_orders_path)
+  end
+
+  def reject
+    ActiveRecord::Base.transaction do
+      update_quantity_when_reject if @order.confirmed?
+      @order.disclaim!
+      send_mail
+    end
+  rescue ActiveRecord::RecordInvalid
+    flash[:danger] = t "orders.failed"
+  else
+    flash[:success] = t "orders.reject_success"
+  ensure
+    redirect_back(fallback_location: admin_orders_path)
   end
 
   private
@@ -24,9 +54,34 @@ class Admin::OrdersController < Admin::AdminsController
     redirect_to admin_orders_path
   end
 
-  def total_order order_detail
+  def total_price_order order_detail
     order_detail.reduce(0) do |total, order|
       total + order.quantity * order.product_price
     end
+  end
+
+  def load_order_details
+    @order_detail = @order.order_details.includes(:product)
+    @total = total_price_order @order_detail
+  end
+
+  def update_quantity_when_approve
+    @order_detail.each do |detail|
+      product = detail.product
+      product.quantity -= detail.quantity
+      product.save!
+    end
+  end
+
+  def update_quantity_when_reject
+    @order_detail.each do |detail|
+      product = detail.product
+      product.quantity += detail.quantity
+      product.save!
+    end
+  end
+
+  def send_mail
+    UserMailer.order_status(@order, @order_detail, @total).deliver_now
   end
 end
