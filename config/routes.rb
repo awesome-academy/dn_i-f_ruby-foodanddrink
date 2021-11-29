@@ -4,5 +4,9 @@ Rails.application.routes.draw do
       root "admins#index"
     end
     get "/home", to: "products#home"
+    get "/show/:id", to: "order_details#show"
+
+    resources :products
+
   end
 end
