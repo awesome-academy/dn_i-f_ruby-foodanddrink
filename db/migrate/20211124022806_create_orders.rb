@@ -3,7 +3,6 @@ class CreateOrders < ActiveRecord::Migration[6.1]
     create_table :orders do |t|
       t.float :total_price
       t.integer :status, null: false, default: 0
-      t.datetime :create_day
       t.references :user, null: false, foreign_key: true
       t.references :address, null: false, foreign_key: true
 
