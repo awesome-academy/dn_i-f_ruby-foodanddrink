@@ -1,8 +1,11 @@
 <% if @products.any? %>
   <% @products.each do |product| %>
     <div class="card card-inside">
-        <%= gravatar_for product, size: Settings.gravatar.size_150
-             %><br>
+        <% if product.image.attached? %>
+          <%= image_tag product.display_image %>
+        <% else %>
+          <%= gravatar_for product %>
+        <% end %>
     <div class="card-margin">
         <p class="card-link"><%= link_to product.name, admin_product_path(product)%></p>
         <p class="card-p"><%= t "admin_product.price" %><%= number_to_currency(product.price, locale: :vi) %></p>

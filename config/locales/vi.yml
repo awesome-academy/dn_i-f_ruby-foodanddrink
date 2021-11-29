@@ -125,3 +125,27 @@ vi:
     quantity: "Số lượng :"
     category_name: "Loại :"
   logout: "Đăng xuất"
+  valid_image:
+    format: "Vui lòng chọn ảnh đúng định dạng :  [image/png, image/jpg, image/jpeg]"
+    size: "Phải nhỏ hơn 3MB "
+  new_product_admin:
+    title: "TẠO MỚI SẢN PHẨM"
+    image: "Ảnh :"
+    name: "Tên :"
+    price: "Giá :"
+    description: "Mô tả :"
+    quantity: "Số lượng :"
+    category_name: "Loại :"
+    submit: "Tạo"
+    success: "Tạo mới thành công"
+    fail: "Tạo mới thất bại"
+    add_category: "Thêm loại sản phẩm"
+    remove: "Xóa"
+  erorr: "Bạn gặp một số lổi như sau :"
+  activerecord:
+    attributes:
+      product:
+        name: "Tên "
+        price: "Giá"
+        description: "Mô tả"
+        quantity: "Số lượng"
