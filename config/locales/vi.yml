@@ -42,6 +42,13 @@ vi:
     delete: "Xóa"
     no_order: "Không có đơn hàng được đặt "
     created_order: "Ngày đặt hàng"
+    product_name: "Sản phẩm"
+    ordinal_number: "Số thứ tự"
+    quantity: "Số lượng"
+    price: "Đơn giá"
+    total_price: "Tổng"
+    order_detail: "Chi tiết đơn hàng"
+    total: "Tổng tiền"
   number:
     currency:
       format:

@@ -42,6 +42,13 @@ en:
     delete: "Delete"
     no_order: "No orders placed"
     created_order: " Order date"
+    product_name: "Product"
+    ordinal_number: "Ordinal number"
+    quantity: "Quantity"
+    price: "Price"
+    total_price: "Total price"
+    order_detail: "Order detail"
+    total: "Total"
   time:
     formats:
       own: "%H:%M:%S, %d %B %Y"

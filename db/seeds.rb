@@ -18,7 +18,7 @@ categories = Category.order(:created_at).take(6)
   end
 end
 
-orders
+# orders
 User.all.sample(10).each do |user|
   product = Product.all.sample(2)
   address = user.addresses.sample(1)
@@ -30,7 +30,6 @@ User.all.sample(10).each do |user|
     actual_price: product[0].price,
     product_id: product[0].id)
   order.save
-
 end
 
 User.create!(
