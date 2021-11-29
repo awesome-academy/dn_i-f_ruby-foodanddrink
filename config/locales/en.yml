@@ -77,6 +77,7 @@ en:
       confirmed: " Your order will be packed and shipped. Information order:"
       disclaim: " Sorry your order has been disclaim. Information order:"
   admin_product:
+    not_find: "Sorry! The product you were looking for was not found"
     title: "ALL PRODUCT"
     price: "Price : "
     quantity: "Quantity : "
@@ -167,3 +168,19 @@ en:
   pay: "Pay"
   delete: "delete"
   are_you_sure: "Are you sure?"
+    success: "Edit product success !!"
+    fail: "Edit failed !!!"
+  delete_product:
+    delete: "Delete"
+    success: "Delete product success !!!"
+    fail: "Delete failed !!!"
+  no_permission: "You do not have permission to access this page. Please login with admin account !"
+  idex:
+    hello: "Hello ADMIN "
+    hi: "Have a nice day ^^"
+  admin:
+    submid: "Search"
+    enter_name: "Please enter product name"
+    category: "Category"
+    name: "Name product"
+  please_login: "Please login "

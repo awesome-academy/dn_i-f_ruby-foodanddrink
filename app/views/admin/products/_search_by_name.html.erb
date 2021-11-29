@@ -1,0 +1,19 @@
+<%= form_tag admin_products_path, method: :get do %>
+  <div class="row">
+    <div class="col-3">
+      <div class="lable">
+        <%= t "admin.name" %>
+      </div>
+      <%= text_field_tag :name, params[:name], placeholder: t("admin.enter_name"), class: "form-control" %>
+    </div>
+    <div class="col-3">
+      <div class="lable">
+        <%= t "admin.category" %>
+      </div>
+      <%= collection_select(nil, :category_id, Category.all, :id, :name, {selected: params[:category_id], prompt: true}, class: "form-control")%>
+    </div>
+     <div class="col-6">
+     </div>
+  </div>
+  <%= submit_tag t("admin.submid") , class: "btn btn-primary btn-sm mt-2" %>
+<% end %>

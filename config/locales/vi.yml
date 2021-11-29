@@ -70,6 +70,7 @@ vi:
       confirmed: " Đơn hàng của bạn đã được xác nhận. Thông tin đơn hàng:"
       disclaim: " Rất tiếc đơn hàng của bạn đã bị hủy. Thông tin đơn hàng:"
   admin_product:
+    not_find: "Xin lổi ! không tìm thấy sản phẩm bạn muốn tìm "
     title: "DANH SÁCH SẢN PHẨM"
     price: "Giá : "
     quantity: "Số lượng : "
@@ -142,7 +143,6 @@ vi:
     title: "CHỈNH SỬA SẢN PHẨM"
     success: "chỉnh sửa thành công !"
     fail: "chỉnh sửa thất bại !!"
-
   booking_success: "Mua hàng thành công"
   booking_fail: "Mua hàng không thành công"
   address: "Địa chỉ "
@@ -158,4 +158,19 @@ vi:
   action: "Chức năng"
   pay: "Thanh toán"
   delete: "xoá"
-  are_you_sure: "Bạn có chắc là xoá không?"
+    success: "Chỉnh sửa thành công !!"
+    fail: "Chỉnh sửa thất bại !!!"
+  delete_product:
+    delete: "xóa"
+    fail: "Xóa không thành công !! Sản phẩm này đã có người đặt hàng"
+    success: "Xóa thành công !!"
+  no_permission: "Bạn không có quyền truy cập vào trang này . Vui lòng đăng nhập bằng tài khoản admin !"
+  idex:
+    hello: "Xin chào ADMIN "
+    hi: "Chúc bạn một ngày mới tốt lành ^^"
+  admin:
+    submid: "Tìm kiếm"
+    enter_name: "Xin nhập tên sản phẩm"
+    category: "Loại sản phẩm"
+    name: "Tên sản phẩm"
+  please_login: "Mời đăng nhập "

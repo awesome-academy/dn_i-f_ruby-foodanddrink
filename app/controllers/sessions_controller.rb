@@ -11,20 +11,23 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:cart] = nil
+    log_out
+    flash[:success] = t "logged_out"
+    redirect_to login_path
+  end
+
+  private
+
   def create_login
     user = User.find_by email: params[:session][:email].downcase
 
     flash[:success] = t "login_success"
     session[:cart] = {}
     log_in user
+    return redirect_to admin_root_url if user.admin?
 
     redirect_to home_path
-  end
-
-  def destroy
-    session[:cart] = nil
-    log_out
-    flash[:success] = t "logged_out"
-    redirect_to login_path
   end
 end
