@@ -1,0 +1,10 @@
+<% provide(:title, @title) %>
+<h1 class="title_product">
+  <%= t "admin_product.title" %>
+</h1>
+<div class="container">
+  <%= render "product" %>
+</div>
+<div class="clear mt-4">
+  <%= paginate @products %>
+</div>

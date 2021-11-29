@@ -2,3 +2,32 @@
   float: left;
   width: 120px;
 }
+
+.card-inside{
+  width: 200px;
+  border-radius: 10px;
+  float: right;
+  margin: 20px 20px 20px 0px;
+}
+
+.card-margin{
+  margin-left: 10px;
+  color: blue;
+  font-size: 15px;
+}
+
+.card-p{
+  color: black;
+  font-size: 15px;
+
+}
+
+.clear{
+  clear: right;
+}
+
+.title_product{
+  color: red;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}

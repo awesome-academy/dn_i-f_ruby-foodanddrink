@@ -1,2 +1,7 @@
 page_record_medium: 6
 page_record_medium_10: 10
+page_record_medium_14: 14
+gravatar:
+  size_50: 50
+  size_80: 80
+  size_150: 150

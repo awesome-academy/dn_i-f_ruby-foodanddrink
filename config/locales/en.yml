@@ -76,3 +76,9 @@ en:
     content:
       confirmed: " Your order will be packed and shipped. Information order:"
       disclaim: " Sorry your order has been disclaim. Information order:"
+  admin_product:
+    title: "ALL PRODUCT"
+    price: "Price : "
+    quantity: "Quantity : "
+    name: "Name : "
+    product_empty: "List product is empty"
