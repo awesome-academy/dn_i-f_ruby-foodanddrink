@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_24_023435) do
+ActiveRecord::Schema.define(version: 2021_11_28_151528) do
 
-  create_table "addresses", charset: "utf8mb3", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", charset: "utf8mb4", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "addresses", charset: "utf8mb4", force: :cascade do |t|
     t.string "address"
     t.string "phone"
     t.bigint "user_id", null: false
@@ -21,13 +49,13 @@ ActiveRecord::Schema.define(version: 2021_11_24_023435) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "categories", charset: "utf8mb3", force: :cascade do |t|
+  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "order_details", charset: "utf8mb3", force: :cascade do |t|
+  create_table "order_details", charset: "utf8mb4", force: :cascade do |t|
     t.integer "quantity"
     t.float "actual_price"
     t.bigint "order_id", null: false
@@ -38,7 +66,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_023435) do
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
-  create_table "orders", charset: "utf8mb3", force: :cascade do |t|
+  create_table "orders", charset: "utf8mb4", force: :cascade do |t|
     t.float "total_price"
     t.integer "status", default: 0, null: false
     t.datetime "create_day"
@@ -50,18 +78,19 @@ ActiveRecord::Schema.define(version: 2021_11_24_023435) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "products", charset: "utf8mb3", force: :cascade do |t|
+  create_table "products", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.float "price", null: false
     t.text "description"
     t.integer "quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "images"
     t.index ["name"], name: "index_products_on_name"
     t.index ["price"], name: "index_products_on_price"
   end
 
-  create_table "users", charset: "utf8mb3", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -74,6 +103,8 @@ ActiveRecord::Schema.define(version: 2021_11_24_023435) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"

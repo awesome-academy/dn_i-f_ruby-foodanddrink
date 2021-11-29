@@ -1,0 +1,31 @@
+<section id="our-services" class="text-gray-700">
+  <div class="container items-center px-5 py-8 mx-auto lg:px-24 mt-8 rounded-xl bg-white opacity-90">
+    <div class="row">   
+      <% @products.each do |product| %>
+        <div class="flex flex-wrap mb-12 text-left col-sm-4 ">
+          <div class="">
+            <a href="" class="p-0 m-6 rounded-xl shadow-2xl block service" style="text-decoration:none;">
+              <%= image_tag product.images if product.images.attached? %>
+              <div class="inline-flex justify-between w-full px-4">
+                <h1
+                  class="mb-7 text-xl font-semibold leading-none tracking-tighter text-green-700 title-font">
+                  <%= product.name %> 
+                </h1>
+                <br>
+                <span class="text-lg font-bold">
+                    <%= t("product_price", price:product.price) %>
+                </span>    
+              </div>
+              <p class="mx-auto text-justify text-base font-medium leading-relaxed text-gray-700 px-4 pb-4">
+                <%= product.description %>
+              </p>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    </div>     
+  </div>
+  <div class="paginate">
+    <h2><%= paginate @products %></h2>
+  </div>
+</section>
