@@ -116,3 +116,11 @@ vi:
   quantity: "Số lượng"
   english: "Tiếng Anh"
   vietnamese: "Vietnamese"
+  show_product_admin:
+    title: "CHI TIẾT SẢN PHẨM "
+    image: "Ảnh :"
+    name: "Tên :"
+    price: "Giá :"
+    description: "Mô tả :"
+    quantity: "Số lượng :"
+    category_name: "Loại :"

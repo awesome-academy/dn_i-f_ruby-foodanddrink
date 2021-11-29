@@ -31,3 +31,32 @@
   font-family: "Times New Roman", Times, serif;
   text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+.font-table{
+  font-size: 20px;
+  color: black;
+}
+
+.h1-show{
+  color: blue;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 50px;
+}
+
+.card-link{
+  color: blue;
+  font-size: 17px;
+}
+
+.laber{
+  with: 100px;
+  color: red;
+}
+
+.image{
+  with: 50px;
+}

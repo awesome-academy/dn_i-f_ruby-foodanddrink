@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
     end
     namespace :admin do
-      resources :products, only: %i(index)
+      resources :products, only: %i(index show)
     end
     get "/home", to: "products#home"
     get "/show/:id", to: "order_details#show"
