@@ -111,3 +111,11 @@ en:
   quantity: "Quantity"
   english: "English"
   vietnamese: "Vietnamese"
+  show_product_admin:
+    title: "DETAIL PRODUCT"
+    image: "Image :  "
+    name: "Name :"
+    price: "Price :"
+    description: "Description :"
+    quantity: "Quantity :"
+    category_name: "Category :"

@@ -6,4 +6,5 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_details
 
   scope :recent, ->{order updated_at: :DESC}
+  delegate :name, to: :category, prefix: true
 end
