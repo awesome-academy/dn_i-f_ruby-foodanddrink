@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  skip_before_action :require_login, only: [:home, :show]
+
   def home
     @products = Product.all.page(params[:page]).per(Settings.page_record_medium)
                        .recent
