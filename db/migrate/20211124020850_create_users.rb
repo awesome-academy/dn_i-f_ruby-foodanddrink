@@ -4,11 +4,10 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :email, null: false
       t.string :password_digest, null: false
-      t.string :remember_digest
-      t.string :reset_degest
       t.boolean :status, null: false, default: false
       t.integer :role, null: false, default: 0
-
+      t.string :remember_digest
+      t.string :reset_degest
       t.timestamps
     end
     add_index :users, :email, unique: true

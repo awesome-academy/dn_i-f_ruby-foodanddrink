@@ -30,3 +30,21 @@ en:
   add_to_cart: "Add to Cart"
   quantity: "Quantity"
   not_found: "not found"
+  orders:
+    fullname: "Full name"
+    phone: "Phone"
+    address: "Address"
+    total_price: "Total price"
+    status: "Status"
+    action: "Action"
+    all: "All Orders"
+    view: "View"
+    delete: "Delete"
+    no_order: "No orders placed"
+    created_order: " Order date"
+  time:
+    formats:
+      own: "%H:%M:%S, %d %B %Y"
+      default: "%d-%m-%Y"
+      long: "%d %B, %Y"
+      short: "%d %b"

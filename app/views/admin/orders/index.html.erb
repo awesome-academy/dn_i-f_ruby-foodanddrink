@@ -1,0 +1,42 @@
+<% provide(:title, @title) %>
+<div>
+  <div class="page-title">
+    <div class="title_left">
+      <h3 class="text-right"><b><%= t "manager_orders" %></b></h3>
+    </div>
+</div>
+</div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 ">
+      <% if @orders.any? %>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card-box table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th><%= t "orders.fullname" %></th>
+                    <th><%= t "orders.phone" %></th>
+                    <th><%= t "orders.address" %></th>
+                    <th><%= t "orders.created_order" %></th>
+                    <th><%= t "orders.total_price" %></th>
+                    <th><%= t "orders.status" %></th>
+                    <th><%= t "orders.action" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%= render @orders %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <%= paginate @orders %>
+      <% else %>
+        <h1 class="text-center cart-index-title">
+          <%= t "orders.no_order" %>
+        </h1>
+      <% end %>
+    </div>
+  </div>
+</div>

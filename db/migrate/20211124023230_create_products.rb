@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.float :price, null: false
       t.text :description
       t.integer :quantity, null: false
-
+      t.references :category, null: false, foreign_key: true
       t.timestamps
     end
     add_index :products, :price

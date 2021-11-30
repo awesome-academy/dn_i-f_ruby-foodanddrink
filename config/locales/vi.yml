@@ -1,8 +1,6 @@
 vi:
   manager: "QUẢN LÝ"
-  english: "Tiếng Anh"
   welcome: "Xin chào !"
-  vietnamese: "Tiếng Việt"
   manager_orders: "Quản lý đơn hàng"
   status_order:
     open: "Chờ xác nhận"
@@ -32,3 +30,27 @@ vi:
   policy: "Policy"
   next: "Next: "
   add_to_cart: "Add to Cart"
+  orders:
+    fullname: "Họ tên"
+    phone: "Điện thoại"
+    address: "Địa chỉ"
+    total_price: "Tổng tiền"
+    status: "Trạng thái"
+    action: "Hành động"
+    all: "Tất cả đơn hàng"
+    view: "Xem"
+    delete: "Xóa"
+    no_order: "Không có đơn hàng được đặt "
+    created_order: "Ngày đặt hàng"
+  number:
+    currency:
+      format:
+        unit: " vnđ"
+        delimiter: ","
+        format: "%n%u"
+  time:
+    formats:
+      own: "%H:%M:%S, %d %B %Y"
+      default: "%d-%m-%Y"
+      long: "%d %B, %Y"
+      short: "%d %b"
