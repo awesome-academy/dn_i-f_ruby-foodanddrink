@@ -17,10 +17,15 @@
         <nav class="flex flex-wrap items-center text-base justify-left ">
           <ul class="items-center inline-block list-none lg:inline-flex">
             <li>
-              <%= link_to t("home"), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600" %>
+              <%= link_to t("home", locale: :en), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600" %>
             </li>
             <li>
-              <%= link_to t("our_services"), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600" %>
+              <%= link_to t("our_services", locale: :en), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600" %>
+            </li>
+            <li>
+              <% if logged_in? %>
+                <%= link_to t("logout", locale: :en), "#" %> 
+              <% end %>
             </li>
             <li>
               <% if logged_in? %>
