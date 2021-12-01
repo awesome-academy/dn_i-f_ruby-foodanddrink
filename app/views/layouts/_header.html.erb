@@ -22,6 +22,11 @@
             <li>
               <%= link_to t("our_services"), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600" %>
             </li>
+            <li>
+              <% if logged_in? %>
+                <%= link_to t("logout"), logout_path, method: "delete" %> 
+              <% end %>
+            </li>
           </ul>
         </nav>      
       </div>
