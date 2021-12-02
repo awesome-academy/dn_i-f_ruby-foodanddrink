@@ -6,10 +6,11 @@ class Order < ApplicationRecord
   enum status: {
     open: 0,
     confirmed: 1,
-    cancelled: 2
+    cancelled: 2,
+    disclaim: 3
   }
 
   scope :recent_orders, ->{order created_at: :desc}
-  delegate :name, to: :user, prefix: true
+  delegate :name, :email, to: :user, prefix: true
   delegate :phone, :address, to: :address, prefix: true
 end
