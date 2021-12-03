@@ -83,3 +83,9 @@ vi:
     content:
       confirmed: " Đơn hàng của bạn đã được xác nhận. Thông tin đơn hàng:"
       disclaim: " Rất tiếc đơn hàng của bạn đã bị hủy. Thông tin đơn hàng:"
+  admin_product:
+    title: "DANH SÁCH SẢN PHẨM"
+    price: "Giá : "
+    quantity: "Số lượng : "
+    name: "Tên : "
+    product_empty: "Danh sách sản phẩm đang trống"

@@ -9,10 +9,12 @@ Rails.application.routes.draw do
         end
       end
     end
+    namespace :admin do
+      resources :products, only: %i(index)
+    end
     get "/home", to: "products#home"
     get "/show/:id", to: "order_details#show"
 
     resources :products
-
   end
 end
