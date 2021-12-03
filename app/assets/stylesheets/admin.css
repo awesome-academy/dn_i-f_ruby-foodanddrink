@@ -4,9 +4,8 @@
 }
 
 .card-inside{
-  width: 200px;
+  width: 270px;
   border-radius: 10px;
-  float: right;
   margin: 20px 20px 20px 0px;
 }
 
@@ -59,4 +58,28 @@
 
 .image{
   with: 50px;
+}
+
+.lable-form{
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: black;
+  margin-left: 20px;
+}
+
+.image_show{
+  with: 100px;
+}
+
+.container-index{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  padding: 10px 0 20px 0;
+}
+
+.erorr_message{
+  font-size: 17px;
+  color: red;
 }

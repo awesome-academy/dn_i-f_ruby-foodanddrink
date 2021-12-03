@@ -1,0 +1,47 @@
+<div class="form-all">
+  <%= form_for [:admin, @product] do |f|%>
+  <%= render "shared/errors", object: @product %>
+    <div class="lable-form">
+      <%= f.label :name, t("new_product_admin.name") %>
+      <%= f.text_field :name, class: "form-control" %>
+
+    </div>
+    <div class="lable-form">
+      <%= f.label :price, t("new_product_admin.price") %>
+      <%= f.text_field :price, class: "form-control" %>
+
+    </div>
+    <div class="lable-form">
+      <%= f.label :description, t("new_product_admin.description") %>
+      <%= f.text_field :description, class: "form-control" %>
+
+    </div>
+    <div class="lable-form">
+      <%= f.label :quantity, t("new_product_admin.quantity") %>
+      <%= f.text_field :quantity, class: "form-control" %>
+
+    </div>
+    <div class="lable-form">
+      <%= f.label :category_id, t("new_product_admin.category_name") %>
+      <%= f.collection_select :category_id, Category.all, :id, :name,
+       {},{:class=>"form-control" }%>
+       <%= f.fields_for :category do |category| %>
+
+       <% end %>
+    </div>
+    <div class="lable-form">
+       <%= link_to_add_fields t("new_product_admin.add_category"), f, :category%>
+    </div>
+
+    <div class="lable-form">
+      <%= f.label :image, t("new_product_admin.image") %>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="submit-form-index">
+      <%= f.submit t("new_product_admin.submit"),
+          class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+<%= javascript_pack_tag "custom" %>

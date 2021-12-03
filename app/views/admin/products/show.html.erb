@@ -8,8 +8,13 @@
       <th scope="col" class="laber">
         <%= t "show_product_admin.image" %>
       </th>
+
       <th class="image">
-        <%= gravatar_for @product %>
+        <% if @product.image.present? %>
+          <%= image_tag @product.display_image %>
+        <% else %>
+          <%= gravatar_for @product %>
+        <% end %>
       </th>
     </tr>
     <tr>
