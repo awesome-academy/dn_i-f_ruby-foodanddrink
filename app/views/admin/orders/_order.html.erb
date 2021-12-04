@@ -16,5 +16,24 @@
     <% if order.confirmed? %>
       <%= link_to t("orders.cancel"), reject_admin_order_path(order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" %>
     <% end %>
+    <% if order.open? %>
+      <%= link_to approve_admin_order_path(order), method: :get, data: { confirm: t("you_sure") } do %>
+        <button type="button" class="btn btn-success btn-sm">
+          <%= t("orders.approve")%>
+        </button>
+      <% end %>
+      <%= link_to reject_admin_order_path(order), method: :get, data: { confirm: t("you_sure") } do %>
+        <button type="button" class="btn btn-danger btn-sm">
+          <%= t("orders.reject")%>
+        </button>
+      <% end %>
+    <% end %>
+    <% if order.confirmed? %>
+      <%= link_to reject_admin_order_path(order), method: :get, data: { confirm: t("you_sure") } do %>
+        <button type="button" class="btn btn-danger btn-sm">
+          <%= t("orders.cancel")%>
+        </button>
+      <% end %>
+    <% end %>
   </td>
 </tr>

@@ -111,3 +111,32 @@ en:
   quantity: "Quantity"
   english: "English"
   vietnamese: "Vietnamese"
+  show_product_admin:
+    title: "DETAIL PRODUCT"
+    image: "Image :  "
+    name: "Name :"
+    price: "Price :"
+    description: "Description :"
+    quantity: "Quantity :"
+    category_name: "Category :"
+  valid_image:
+    format: "Please choose the correct image format: [image/png, image/jpg, image/jpeg]"
+    size: "Should be less than 3MB"
+  new_product_admin:
+    title: "CREATE NEW PRODUCT"
+    name: "Name :"
+    price: "Price :"
+    description: "Description :"
+    quantity: "Quantity :"
+    category_name: "Category :"
+    submit: "Submit"
+    image: "Image :  "
+    success: "Create success!"
+    fail: "Create failed"
+    add_category: "Add category"
+    remove: "Remove"
+  erorr: "You get the following error:"
+  activerecord:
+    attributes:
+      product:
+        name: "NAme"
