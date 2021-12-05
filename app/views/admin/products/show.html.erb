@@ -1,0 +1,59 @@
+<% provide :title, @title %>
+<h1 class="h1-show">
+  <%= t "show_product_admin.title" %>
+</h1>
+<table class="table font-table">
+  <thead>
+    <tr>
+      <th scope="col" class="laber">
+        <%= t "show_product_admin.image" %>
+      </th>
+      <th class="image">
+        <%= gravatar_for @product %>
+      </th>
+    </tr>
+    <tr>
+      <th scope="col" class="laber">
+        <%= t "show_product_admin.name" %>
+      </th>
+      <th>
+        <%= @product.name %>
+      </th>
+    </tr>
+    <tr>
+      <th scope="col" class="laber">
+        <%= t "show_product_admin.price" %>
+      </th>
+      <th>
+        <%= number_to_currency(@product.price, locale: :vi)%>
+      </th>
+    </tr>
+    <tr>
+      <th scope="col" class="laber">
+        <%= t "show_product_admin.description" %>
+      </th>
+      <th>
+    <%= @product.description %>
+      </th>
+    </tr>
+    <tr>
+      <th scope="col" class="laber">
+        <%= t "show_product_admin.quantity" %>
+      </th>
+      <th>
+        <%= @product.quantity %>
+      </th>
+    </tr>
+    <tr>
+      <th scope="col" class="laber">
+        <%= t "show_product_admin.category_name" %>
+      </th>
+      <th>
+        <%= @product.category_name %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<%= link_to t("orders.back"), admin_products_path, class: "btn btn-secondary btn-sm" %>
