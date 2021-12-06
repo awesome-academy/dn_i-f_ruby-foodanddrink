@@ -1,9 +1,16 @@
 page_record_medium: 6
 page_record_medium_10: 10
-page_record_medium_14: 14
 gravatar:
   size_50: 50
   size_80: 80
   size_150: 150
 length_6: 6
 length_50: 50
+length:
+  min_6: 6
+  max_20: 20
+  max_300: 300
+check_number: 0
+image:
+  size_3mb: 3
+  format: ["image/png", "image/jpg", "image/jpeg"]

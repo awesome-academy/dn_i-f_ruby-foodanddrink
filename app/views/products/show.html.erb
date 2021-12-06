@@ -9,7 +9,7 @@
   <section id="home" class="text-gray-700">
     <div class="container flex flex-col items-start px-5 py-16 mx-auto mt-8 lg:items-center md:flex-row lg:px-28 bg-white opacity-90 rounded-t-xl">
       <div class="flex">
-        <%= image_tag @product.images if @product.images.attached? %></div>
+        <%= image_tag @product.display_image if @product.image.attached? %></div>
           <div>
             <h2 class="text-3xl font-semibold mb-4" style= "font-family:cursive;font-size:55px;color:violet"><%= t "title", locale: :en  %></h2>
             <h2 class="text-3xl font-semibold mb-4 text-green-600"> <%= t("product_price", price:@product.price) %></h2>
