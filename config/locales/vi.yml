@@ -124,3 +124,4 @@ vi:
     description: "Mô tả :"
     quantity: "Số lượng :"
     category_name: "Loại :"
+  logout: "Đăng xuất"

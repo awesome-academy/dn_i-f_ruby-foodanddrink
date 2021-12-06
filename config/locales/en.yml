@@ -119,3 +119,4 @@ en:
     description: "Description :"
     quantity: "Quantity :"
     category_name: "Category :"
+  logout: "Logout"
