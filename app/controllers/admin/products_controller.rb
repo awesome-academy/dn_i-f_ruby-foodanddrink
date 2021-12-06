@@ -1,4 +1,6 @@
 class Admin::ProductsController < Admin::AdminsController
+  before_action :load_product, only: %i(show edit update remove_image)
+
   def index
     @title = t "admin_product.title"
     @products = Product.recent.page(params[:page])
@@ -7,11 +9,25 @@ class Admin::ProductsController < Admin::AdminsController
 
   def show
     @title = t "show_product_admin.title"
-    @product = Product.find_by id: params[:id]
-    return if @product
+  end
 
-    flash[:danger] = t "not_found"
-    redirect_to admin_products_path
+  def edit
+    @title = t "edit_product.title"
+  end
+
+  def update
+    if @product.update(product_params)
+      flash[:success] = t "edit_product.success"
+      redirect_to admin_product_path(@product)
+    else
+      flash[:danger] = t "edit_product.fail"
+      render :edit
+    end
+  end
+
+  def remove_image
+    @product.image.purge
+    redirect_back(fallback_location: admin_orders_path(@product))
   end
 
   def new
@@ -38,5 +54,13 @@ class Admin::ProductsController < Admin::AdminsController
           .permit(:name, :price, :description, :quantity,
                   :category_id, :image,
                   category_attributes: :name)
+  end
+
+  def load_product
+    @product = Product.find_by id: params[:id]
+    return if @product
+
+    flash[:danger] = t "not_found"
+    redirect_to admin_products_path
   end
 end

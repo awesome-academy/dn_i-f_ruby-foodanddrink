@@ -23,14 +23,20 @@
     </div>
     <div class="lable-form">
       <%= f.label :category_id, t("new_product_admin.category_name") %>
-      <%= f.collection_select :category_id, Category.all, :id, :name,
+      <%= f.collection_select :category_id, Category.select(:id, :name), :id, :name,
        {},{:class=>"form-control" }%>
     </div>
     <div class="lable-form">
-       <%= link_to_add_fields t("new_product_admin.add_category"), f, :category %>
+       <%= link_to_add_fields t("new_product_admin.add_category"), f, :category%>
+    </div>
+    <div>
+      <% if @product.image.present? %>
+        <%= image_tag @product.display_image %>
+        <%= link_to t("edit_product.delete"), remove_image_admin_product_path(@product),method: :delete, data: {confirm: t("edit_product.you_sure")}, class: "btn btn-danger btn-sm"%>
+      <% end %>
     </div>
 
-    <div class="lable-form">
+    <div class="lable-form mt-3">
       <%= f.label :image, t("new_product_admin.image") %>
       <%= f.file_field :image %>
     </div>

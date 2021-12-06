@@ -10,7 +10,11 @@ Rails.application.routes.draw do
       end
     end
     namespace :admin do
-      resources :products, except: %i(update delete)
+      resources :products, except: :delete do
+        member do
+          delete :remove_image
+        end
+      end
     end
     get "/home", to: "products#home"
     get "/show/:id", to: "order_details#show"
