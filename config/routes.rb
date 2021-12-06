@@ -16,12 +16,24 @@ Rails.application.routes.draw do
         end
       end
     end
+    root "products#home"
+
     get "/home", to: "products#home"
     get "/show/:id", to: "order_details#show"
+    get "/new", to: "users#new"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
-    get "/logout/", to: "sessions#destroy"
+    delete "/logout", to: "sessions#destroy"
+    delete "/tru/:id", to: "carts#tru" 
+    post "/cong/:id", to: "carts#add"
+    delete "/cart/:id", to: "carts#destroy"
+
+    
 
     resources :products
+    resources :users
+    resources :orders
+    resources :order_details
+    resources :carts
   end
 end

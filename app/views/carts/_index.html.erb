@@ -1,0 +1,35 @@
+<table>
+<thead>
+    <th><%= t "name_product" %> &nbsp;</th>
+    <th><%= t "price" %> &nbsp;</th>
+    <th><%= t "quantity" %>&nbsp;</th>
+    <th><%= t "total" %> &nbsp;</th>
+    <th><%= t "action" %><th>
+</thead>
+<tbody>
+<% @t = 0 %>
+<% @products.each do |product| %>
+<tr>
+    <td><%= product.name %> &nbsp; </td>
+    <td><%= product.price%> &nbsp; </td>
+    <td><%= session[:cart]["#{product.id}"].to_i %> &nbsp; </td>
+    <td><%= product.price*session[:cart]["#{product.id}"].to_i %> &nbsp; </td>
+    <% @t = @t +  product.price*session[:cart]["#{product.id}"].to_i %>
+    <td><%= button_to "-", "/tru/#{product.id}", method: :delete, class: "btn primary-outline" %> &nbsp; &nbsp;</td>
+    <td><%= button_to "+", "/cong/#{product.id}", method: :post, class: "btn primary-outline"  %> &nbsp; </td>
+    <td><%= button_to "delete", "/cart/#{product.id}", method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> &nbsp; </td>
+</tr>
+<% end %>
+<tr>
+    <td> <%= t "total_money" %> </td>
+    <td><%= @t %> &nbsp; </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+        <%= link_to t("pay"), orders_path, class: "btn btn-primary" %> 
+    </td>
+</tr>
+</tbody>
+</table>

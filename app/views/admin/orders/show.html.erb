@@ -53,11 +53,14 @@
       <div>
       <%= link_to t("orders.back"), admin_orders_path, class: "btn btn-secondary btn-sm" %>
       <% if @order.open? %>
-        <%= link_to t("orders.approve"), approve_admin_order_path(@order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-success btn-sm" %>
-        <%= link_to t("orders.reject"), reject_admin_order_path(@order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" %>
+        <%= button_to t("orders.approve"), approve_admin_order_path(@order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-success btn-sm" %>
+        
+        
+        <%= button_to t("orders.reject"), reject_admin_order_path(@order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" %>
       <% end %>
+
       <% if @order.confirmed? %>
-        <%= link_to t("orders.cancel"), reject_admin_order_path(@order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" %>
+        <%= button_to t("orders.cancel"), reject_admin_order_path(@order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" %>
       <% end %>
       </div>
       <hr>
