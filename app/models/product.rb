@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :category, allow_destroy: true
 
   scope :recent, ->{order created_at: :DESC}
+  scope :list_product, ->(id){where id: id}
   delegate :name, to: :category, prefix: true
 
   validates :name, presence: true,

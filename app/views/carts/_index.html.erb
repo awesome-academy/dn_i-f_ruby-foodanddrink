@@ -1,0 +1,35 @@
+<table>
+  <thead class="text_cart_one">
+    <th><%= t "name_product" %>&nbsp;</th>
+    <th><%= t "price" %>&nbsp;</th>
+    <th><%= t "quantity" %>&nbsp;</th>
+    <th><%= t "total" %>&nbsp;</th>
+    <th><%= t "action" %><th>
+  </thead>
+  <tbody>
+    <% @t = 0 %>
+    <% @products.each do |product| %>
+      <tr class="text_cart">
+        <td><%= product.name %>&nbsp;</td>
+        <td><%= product.price %>&nbsp;</td>
+        <td><%= session[:cart]["#{product.id}"].to_i %>&nbsp;</td>
+        <td><%= product.price*session[:cart]["#{product.id}"].to_i %>&nbsp;</td>
+        <% @t = @t +  product.price*session[:cart]["#{product.id}"].to_i %>
+        <td><%= button_to "-", "/carts/#{product.id}", method: :patch, class: "btn primary-outline" %></td>
+        <td><%= button_to '+', {:controller => "carts", :action => "create", carts: {:product_id => product.id}} , :method=>:post, class: "btn primary-outline" %></td>
+        <td><%= button_to t("delete"), "/cart/#{product.id}", method: :delete, data: { confirm: t("are_you_sure") }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+    <tr class="text_cart">
+      <td><%= t "total_money" %></td>
+      <td><%= @t %>&nbsp;</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <%= link_to t("pay"), home_path, class: "btn btn-primary" %> 
+      </td>
+    </tr>
+  </tbody>
+</table>

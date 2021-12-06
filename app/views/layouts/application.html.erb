@@ -10,6 +10,7 @@
   </head>
 
   <body>
+  <%= render "layouts/header" %>
     <section class="content" style="min-height: auto;">
       <% flash.each do |key, value| %>
         <div class="row">
@@ -19,6 +20,9 @@
         </div>
       <% end %>
     </section>
-    <%= yield %>
+    <div class="bg-gradient-to-tr from-yellow-400 to-purple-400 relative content_body">
+      <%= yield %>
+    </div>
+   <%= render "layouts/footer" %>
   </body>
 </html>

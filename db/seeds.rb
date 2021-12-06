@@ -1,16 +1,16 @@
-4.times do |n|
-    name = Faker::Name.name
-    email = "user-#{n}@gmail.com"
-    u = Product.new(
-        name: name,
-        description: email,
-        quantity: rand(2..15),
-        price: Faker::Number.decimal(l_digits: 3, r_digits: 2),
-    )
-    u.images.attach(io: File.open(Rails.root.join("app", "assets", "images", "banh1.jpg")),
-        filename: "banh1.jpg",
-        content_type: "image/jpg")
-    u.save!
+# 4.times do |n|
+#     name = Faker::Name.name
+#     email = "user-#{n}@gmail.com"
+#     u = Product.new(
+#         name: name,
+#         description: email,
+#         quantity: rand(2..15),
+#         price: Faker::Number.decimal(l_digits: 3, r_digits: 2),
+#     )
+#     u.images.attach(io: File.open(Rails.root.join("app", "assets", "images", "banh1.jpg")),
+#         filename: "banh1.jpg",
+#         content_type: "image/jpg")
+#     u.save!
 
 # category
 10.times do |n|
@@ -18,7 +18,7 @@
   Category.create!(name: name)
 end
 
-# product
+
 categories = Category.order(:created_at).take(6)
 50.times do |n|
   name = Faker::Food.fruits
