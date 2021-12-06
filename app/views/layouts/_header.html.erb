@@ -27,6 +27,11 @@
                 <%= link_to t("logout"), logout_path, method: "delete" %> 
               <% end %>
             </li>
+            <li>
+              <% if logged_in? %>
+                <%= link_to t("logout"), logout_path, method: "delete" %> 
+              <% end %>
+            </li>
           </ul>
         </nav>      
       </div>

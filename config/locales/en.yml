@@ -120,3 +120,4 @@ en:
     quantity: "Quantity :"
     category_name: "Category :"
   logout: "Logout"
+  password_confirmation: "Password Confirmation"
