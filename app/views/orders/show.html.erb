@@ -1,0 +1,8 @@
+<ul class="list-group">
+    <li class="list-group-item"></li>
+    <li class="list-group-item list-group-item-primary"><%= t "name" %> <%= @order.user.name %></li>
+    <li class="list-group-item list-group-item-success"><%= t "email" %><%= @order.user.email %></li>
+    <li class="list-group-item list-group-item-danger"><%= t "phone" %><%= @order.address.phone %></li>
+    <li class="list-group-item list-group-item-warning"><%= t "address" %> <%= @order.address.address %> </li>
+    <li class="list-group-item list-group-item-secondary"><%= t "total_money" %><%= @order.total_price %></li>
+</ul>
