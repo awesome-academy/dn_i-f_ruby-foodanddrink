@@ -1,0 +1,35 @@
+    <table>
+    <thead class="text_cart_one">
+        <th><%= t "name_product" %>&nbsp;</th>
+        <th><%= t "price" %>&nbsp;</th>
+        <th><%= t "quantity" %>&nbsp;</th>
+        <th><%= t "total" %> &nbsp;</th>
+    </thead>
+    <tbody>
+    <% @t = 0 %>
+    <% @products.each do |product| %>
+    <tr class="text_cart">
+        <td><%= product.name %>&nbsp;</td>
+        <td><%= product.price %>&nbsp;</td>
+        <td><%= session[:cart]["#{product.id}"] %>&nbsp;</td>
+        <td><%= product.price*session[:cart]["#{product.id}"] %>&nbsp;</td>
+        <% @t = @t +  product.price*session[:cart]["#{product.id}"] %>
+    </tr>
+    <% end %>
+    <tr class="text_cart">
+        <td> <%= t "total_money" %> </td>
+        <td><%= @t %>&nbsp;</td>
+    </tr>
+    </tbody> 
+    </table>
+
+<%= form_for :orders,  url: {action: :create, controller: :orders} do |form| %>
+    <%= form.hidden_field :total, value: @t %>
+    <select name="address" class="text_cart">  
+        <% @user.addresses.each do |a| %>
+            <option value="<%= a.id %>"><%= t("address")   + a.address + t("phone")+ a.phone  %></option>
+         <% end %>    
+    </select>
+    <br>       
+    <%= form.submit t("completed"), class: "btn btn-primary" %>
+<% end %>

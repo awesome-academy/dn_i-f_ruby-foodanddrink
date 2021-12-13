@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     delete "/cart/:id", to: "carts#destroy"
 
     resources :products
+    resources :orders
     resources :carts
   end
 end

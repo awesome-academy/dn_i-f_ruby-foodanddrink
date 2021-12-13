@@ -16,3 +16,14 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .cart_image {
+     width: 50px;
+ }
+ .backgroud_footer {
+     background: black;
+ }
+
+ .content_body {
+     min-height: 540px;
+ }
