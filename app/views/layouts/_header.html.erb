@@ -10,25 +10,36 @@
               <img class="w-7" src="/imgs/eco-5465459_1280111.png" alt="">
             </div>
             <h2
-              class="block p-2 text-2xl font-medium tracking-tighter text-gray-700 transition duration-500 ease-in-out transform cursor-pointer lg:text-x lg:mr-8">
-              <%= t "title", locale: :en %>  </h2>
+              class="block p-2 text-2xl font-medium tracking-tighter text-gray-700 transition duration-500 ease-in-out transform cursor-pointer lg:text-x lg:mr-8 home_text_1">
+              <%= t "title" %>  </h2>
           </div>
         </a>
         <nav class="flex flex-wrap items-center text-base justify-left ">
-          <ul class="items-center inline-block list-none lg:inline-flex">
+          <ul class="items-center inline-block list-none lg:inline-flex ">
             <li>
-              <%= link_to t("home"), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600" %>
+              <%= link_to t("home"), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600 home_text" %>
             </li>
             <li>
-              <%= link_to t("our_services"), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600" %>
+              <%= link_to t("our_services"), home_path , class: "px-4 py-1 mr-1 text-lg font-semibold text-gray-500 transition duration-500 ease-in-out transform rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:text-green-600 home_text" %>
             </li>
             <li>
               <% if logged_in? %>
-                <%= link_to t("logout"), logout_path, method: "delete" %> 
+                <%= link_to t("logout"), logout_path, method: "delete", class: "logout" %> 
               <% end %>
             </li>
           </ul>
-        </nav>      
+        </nav> 
+        <section class="text-gray-700 fixed z-[100] bottom-9 right-4 ">
+        <ul>
+          <li>           
+            <button>
+            <%= link_to t("cart"), carts_path  %>
+            <img class="cart_image" src="
+            https://media.istockphoto.com/vectors/shopping-cart-icon-isolated-on-white-background-vector-id1206806317?k=20&m=1206806317&s=612x612&w=0&h=waK8qOHV2Fgz2ntEWHWBQtXpNDAQ_wdhd4tkTUz6tfE=">
+            </button>
+          </li>
+        </ul>
+      </section>
       </div>
     </div>
   </div>

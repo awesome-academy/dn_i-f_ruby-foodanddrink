@@ -19,6 +19,11 @@
               <p class="mx-auto text-justify text-base font-medium leading-relaxed text-gray-700 px-4 pb-4">
                 <%= product.description %>
               </p>
+              <%= form_for :carts, url: {action: :create, controller: :carts}, :remote => true do |f| %>
+                <%= f.hidden_field :product_id, value: product.id.to_s %>
+                <%= f.hidden_field :quantity, value: 1 %>
+                <%= f.submit t("add_to_cart") %>
+              <% end %>
             </a>
           </div>
         </div>
