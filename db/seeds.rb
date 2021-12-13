@@ -32,7 +32,7 @@ categories = Category.order(:created_at).take(6)
   end
 end
 
-# orders
+
 User.all.sample(10).each do |user|
   product = Product.all.sample(2)
   address = user.addresses.sample(1)

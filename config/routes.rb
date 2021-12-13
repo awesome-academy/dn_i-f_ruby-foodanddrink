@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
     end
     namespace :admin do
-      resources :products, except: :delete do
+      resources :products do
         member do
           delete :remove_image
         end

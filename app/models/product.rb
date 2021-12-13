@@ -8,6 +8,11 @@ class Product < ApplicationRecord
 
   scope :recent, ->{order created_at: :DESC}
   scope :list_product, ->(id){where id: id}
+  scope :find_name, ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
+  scope :search_category,
+        (lambda do |category_id|
+          where(category_id: category_id) if category_id.present?
+        end)
   delegate :name, to: :category, prefix: true
 
   validates :name, presence: true,

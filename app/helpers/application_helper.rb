@@ -4,6 +4,15 @@ module ApplicationHelper
     page_title.empty? ? base_title : "#{page_title} | #{base_title}"
   end
 
+  def show_message_for_field attribute
+    full_messages_for = @product.errors.full_messages_for(attribute)
+    return if full_messages_for.empty?
+
+    content_tag :ul, class: "erorr_message" do
+      full_messages_for.map{|msg| concat(content_tag(:li, msg))}
+    end
+  end
+
   def link_to_add_fields name, category, association
     ## create a new object from the association (:product_variants)
     new_object = category.object.send(association).class.new
