@@ -16,5 +16,7 @@
     <% if order.confirmed? %>
       <%= link_to t("orders.cancel"), reject_admin_order_path(order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" %>
     <% end %>
+    <%= button_to t("delete_image"), reject_admin_order_path(order),
+                                method: :put %>
   </td>
 </tr>
