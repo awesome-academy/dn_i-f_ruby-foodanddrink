@@ -18,7 +18,7 @@
   Category.create!(name: name)
 end
 
-
+# product
 categories = Category.order(:created_at).take(6)
 50.times do |n|
   name = Faker::Food.fruits
