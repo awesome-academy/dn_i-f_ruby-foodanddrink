@@ -48,5 +48,6 @@ group :test do
   gem "shoulda-matchers"
   gem "simplecov"
   gem "simplecov-rcov"
+  gem "rails-controller-testing"
   gem "webdrivers"
 end
