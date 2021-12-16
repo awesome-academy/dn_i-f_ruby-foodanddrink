@@ -3,25 +3,25 @@
     <div class="lable-form">
       <%= f.label :name, t("new_product_admin.name") %>
       <%= f.text_field :name, class: "form-control" %>
-      <%= show_message_for_field :name %>
+      <%= show_message_for_field(@product, :name) %>
 
     </div>
     <div class="lable-form">
       <%= f.label :price, t("new_product_admin.price") %>
       <%= f.text_field :price, class: "form-control" %>
-      <%= show_message_for_field :price %>
+      <%= show_message_for_field(@product, :price) %>
 
     </div>
     <div class="lable-form">
       <%= f.label :description, t("new_product_admin.description") %>
       <%= f.text_field :description, class: "form-control" %>
-      <%= show_message_for_field :description %>
+      <%= show_message_for_field(@product, :description) %>
 
     </div>
     <div class="lable-form">
       <%= f.label :quantity, t("new_product_admin.quantity") %>
       <%= f.text_field :quantity, class: "form-control" %>
-      <%= show_message_for_field :quantity %>
+      <%= show_message_for_field(@product, :quantity) %>
 
     </div>
     <div class="lable-form">

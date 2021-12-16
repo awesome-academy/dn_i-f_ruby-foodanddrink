@@ -1,15 +1,14 @@
 require "rails_helper"
-include SessionsHelper
 
 RSpec.describe Admin::OrdersController, type: :controller do
   describe "GET #index" do
     context "when not log in" do
       before do
-        get :index
+        get :index, params: {locale: I18n.locale}
       end
 
-      it "redirect to login_url" do
-        expect(response).to redirect_to login_path
+      it "redirect to new_user_session_path" do
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
@@ -17,14 +16,14 @@ RSpec.describe Admin::OrdersController, type: :controller do
       context "when not permission" do
         let!(:user) {FactoryBot.create :user, role: :user}
         before do
-          log_in user
-          get :index
+          sign_in user
+          get :index, params: {locale: I18n.locale}
         end
 
         it "display flash danger" do
           expect(flash[:danger]).to eq I18n.t("no_permission")
         end
-        it "redirect to login_path" do
+        it "redirect to new_user_session_path" do
           expect(response).to redirect_to login_path
         end
       end
@@ -35,7 +34,7 @@ RSpec.describe Admin::OrdersController, type: :controller do
         let!(:order_2) {FactoryBot.create :order}
         let!(:order_3) {FactoryBot.create :order}
         before do
-          log_in user
+          sign_in user
           get :index
         end
 
@@ -49,7 +48,7 @@ RSpec.describe Admin::OrdersController, type: :controller do
   describe "when log in and has permission" do
     let(:user) {FactoryBot.create :user, role: :admin}
     before do
-      log_in user
+      sign_in user
     end
 
     describe "GET #show" do

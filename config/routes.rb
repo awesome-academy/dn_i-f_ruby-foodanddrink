@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
+    devise_for :users
+
     namespace :admin do
       root "admins#index"
       resources :orders do
@@ -20,12 +22,14 @@ Rails.application.routes.draw do
 
     get "/home", to: "products#home"
     get "/show/:id", to: "order_details#show"
-    get "/new", to: "users#new"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     delete "/cart/:id", to: "carts#destroy"
+    get "/users/:id", to: "users#show", as: "user_show"
 
+    as :user do
+      get "login", to: "devise/sessions#new"
+      get "signup", to: "devise/registrations#new"
+      delete "signout", to: "devise/sessions#destroy"
+    end
     resources :products
     resources :carts
   end

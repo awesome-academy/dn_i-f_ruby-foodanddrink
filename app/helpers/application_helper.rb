@@ -4,8 +4,8 @@ module ApplicationHelper
     page_title.empty? ? base_title : "#{page_title} | #{base_title}"
   end
 
-  def show_message_for_field attribute
-    full_messages_for = @product.errors.full_messages_for(attribute)
+  def show_message_for_field obj, attribute
+    full_messages_for = obj.errors.full_messages_for(attribute)
     return if full_messages_for.empty?
 
     content_tag :ul, class: "erorr_message" do

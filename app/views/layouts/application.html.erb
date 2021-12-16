@@ -12,13 +12,17 @@
   <body>
   <%= render "layouts/header" %>
     <section class="content" style="min-height: auto;">
-      <% flash.each do |key, value| %>
-        <div class="row">
-          <div class="alert alert-<%= key %>">
-            <%= value %>
-          </div>
-        </div>
-      <% end %>
+      <div class="container flash-noti">
+        <% flash.each do |message_type, message| %>
+          <% if message_type == "notice" %>
+            <div class="alert alert-success"><%= message %></div>
+          <% elsif message_type == "alert" %>
+            <div class="alert alert-danger"><%= message %></div>
+          <% else %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+        <% end %>
+      </div>
     </section>
     <div class="bg-gradient-to-tr from-yellow-400 to-purple-400 relative content_body">
       <%= yield %>

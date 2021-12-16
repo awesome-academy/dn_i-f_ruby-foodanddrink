@@ -8,6 +8,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-kaminari-views", "~>0.0.5"
 gem "bootstrap-sass", "3.4.1"
 gem "config"
+gem "devise"
 gem "faker"
 gem "figaro"
 gem "image_processing", "1.9.3"
@@ -44,10 +45,10 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "rails-controller-testing"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
   gem "simplecov"
   gem "simplecov-rcov"
-  gem "rails-controller-testing"
   gem "webdrivers"
 end

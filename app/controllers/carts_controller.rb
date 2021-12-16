@@ -1,8 +1,9 @@
 class CartsController < ApplicationController
-  before_action :require_login
+  before_action :user_signed_in?
   before_action :add, only: %i(create)
   def index
     @list_product_id = session[:cart].keys
+
     @products = Product.list_product(@list_product_id)
   end
 
