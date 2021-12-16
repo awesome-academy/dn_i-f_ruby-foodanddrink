@@ -98,6 +98,7 @@ RSpec.describe Admin::OrdersController, type: :controller do
         it "check status after approve" do
           expect(assigns(:order).status).to eq "confirmed"
         end
+
         it "display flash success" do
           expect(flash[:success]).to eq I18n.t("orders.approve_success")
         end
@@ -117,6 +118,7 @@ RSpec.describe Admin::OrdersController, type: :controller do
          it "check status after approve" do
           expect(assigns(:order).status).to eq "disclaim"
         end
+
         it "display flash success" do
           expect(flash[:success]).to eq I18n.t("orders.reject_success")
         end
