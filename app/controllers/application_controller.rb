@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
   protect_from_forgery with: :exception
-  include SessionsHelper
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :initializ_session
   include ProductsHelper
 
   private
@@ -14,10 +15,16 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  def require_login
-    return if logged_in?
+  def initializ_session
+    session[:cart] ||= {}
+  end
 
-    flash[:danger] = t "please_lg"
-    redirect_to login_path
+  protected
+
+  def configure_permitted_parameters
+    added_attrs = [:name, :email, :password,
+                   :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 end

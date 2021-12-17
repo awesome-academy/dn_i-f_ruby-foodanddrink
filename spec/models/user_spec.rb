@@ -34,8 +34,6 @@ RSpec.describe User, type: :model do
 
       it { should validate_uniqueness_of(:email).case_insensitive }
 
-      it { should validate_length_of(:email).is_at_most(100) }
-
       it "when too short is invalid" do
         should_not allow_value("pkaa").for(:email)
       end
@@ -49,8 +47,6 @@ RSpec.describe User, type: :model do
       it { should validate_presence_of(:password).allow_nil }
 
       it { should validate_length_of(:password).is_at_least(6) }
-
-      it { should validate_length_of(:password).is_at_most(100) }
 
       it { should validate_confirmation_of(:password) }
     end

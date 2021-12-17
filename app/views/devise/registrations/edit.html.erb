@@ -1,0 +1,54 @@
+<div class="container">
+  <h1 class="title"><%= t "form.update" %></h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+    <div class="field">
+      <%= f.label t "form.full_name" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+      <%= show_message_for_field(resource, :name) %>
+    </div>
+
+    <div class="field">
+      <%= f.label t "form.email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      <%= show_message_for_field(resource, :email) %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label t "form.password" %> <i><%= t "form.leave_blank"%></i><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+      <%= show_message_for_field(resource, :password) %>
+      <% if @minimum_password_length %>
+          <em>(<%= t "form.password_signup" %> )</em>
+        <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label t "form.password_confirmation" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+      <%= show_message_for_field(resource, :password_confirmation) %>
+    </div>
+
+    <div class="field">
+      <%= f.label t "form.current_password" %> <i><%= t "form.ip_current" %></i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+      <%= show_message_for_field(resource, :current_password) %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t("form.update"), class: "btn btn-primary mt-3" %>
+    </div>
+  <% end %>
+
+  <h3><%= t "form.cancel_account" %></h3>
+
+  <p> <%= button_to t("form.cancel_account"), registration_path(resource_name), data: { confirm: t("form.you_sure") }, method: :delete, class: "btn btn-danger" %></p>
+
+  <%= link_to t("form.back"), :back %>
+</div>
+

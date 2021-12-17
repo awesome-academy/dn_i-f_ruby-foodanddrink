@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag :user %>
+<div class="container">
+  <div id="login-box">
+    <div class="left">
+      <h1 class="title"><%= t "form.sign_up" %></h1>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+        <%= f.label t "form.full_name" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control form_feild"%>
+        <%= show_message_for_field(resource, :name) %>
+
+        <%= f.label t "form.email" %><br />
+        <%= f.email_field :email, autocomplete: "email",  class: "form-control" %>
+        <%= show_message_for_field(resource, :email) %>
+
+        <%= f.label t "form.password" %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        <%= show_message_for_field(resource, :password) %>
+
+        <% if @minimum_password_length %>
+          <em>(<%= t "form.password_signup" %> )</em>
+        <% end %><br/><br/>
+
+        <%= f.label t "form.password_confirmation" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control"%>
+        <%= show_message_for_field(resource, :password_confirmation) %>
+
+        <%= f.submit t("form.sign_up"), class: "btn btn-primary mt-3" %>
+      <% end %>
+    </div>
+  </div>
+  <%= render "devise/shared/links" %>
+</div>
