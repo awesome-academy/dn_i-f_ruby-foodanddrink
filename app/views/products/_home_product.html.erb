@@ -5,7 +5,11 @@
         <div class="flex flex-wrap mb-12 text-left col-sm-4 ">
           <div class="">
             <a href="" class="p-0 m-6 rounded-xl shadow-2xl block service" style="text-decoration:none;">
-              <%= image_tag product.display_image if product.image.attached? %>
+              <% if product.image.attached? %>
+                <%= image_tag product.display_image %>
+              <% else %>
+                <%= gravatar_for product %>
+              <% end %>
               <div class="inline-flex justify-between w-full px-4">
                 <h1
                   class="mb-7 text-xl font-semibold leading-none tracking-tighter text-green-700 title-font">

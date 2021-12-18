@@ -170,7 +170,7 @@ vi:
     delete: "xóa"
     fail: "Xóa không thành công !! Sản phẩm này đã có người đặt hàng"
     success: "Xóa thành công !!"
-  no_permission: "Bạn không có quyền truy cập vào trang này . Vui lòng đăng nhập bằng tài khoản admin !"
+  no_permission: "Bạn không có quyền truy cập vào trang này !"
   idex:
     hello: "Xin chào ADMIN "
     hi: "Chúc bạn một ngày mới tốt lành ^^"

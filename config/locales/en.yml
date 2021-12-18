@@ -161,7 +161,7 @@ en:
     delete: "Delete"
     success: "Delete product success !!!"
     fail: "Delete failed !!!"
-  no_permission: "You do not have permission to access this page. Please login with admin account !"
+  no_permission: "You do not have permission to access this page !"
   idex:
     hello: "Hello ADMIN "
     hi: "Have a nice day ^^"
@@ -197,5 +197,3 @@ en:
     cancel_account: "Cancel account"
     back: "Back"
     you_sure: "Are you sure ?"
-
-

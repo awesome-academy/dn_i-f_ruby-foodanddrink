@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: :show
+  before_action :authenticate_user!, :load_user, only: :show
+  authorize_resource
 
   def show; end
 
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     return if @user
 
-    flash[:danger] = t "không tìm thấy"
+    flash[:danger] = t "not_found"
     redirect_to root_url
   end
 end

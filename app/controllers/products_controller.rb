@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  authorize_resource
+
   def home
     @products = Product.page(params[:page]).per(Settings.page_record_medium)
                        .recent
