@@ -1,19 +1,30 @@
-<%= form_tag admin_products_path, method: :get do %>
+<%= search_form_for [:admin,@q] do |f| %>
   <div class="row">
-    <div class="col-3">
-      <div class="lable">
-        <%= t "admin.name" %>
-      </div>
-      <%= text_field_tag :name, params[:name], placeholder: t("admin.enter_name"), class: "form-control" %>
+    <div class="col-5 lable-form">
+      <%= f.label  t "search_admin.name_description" %>
+      <%= f.search_field :product_cont, class: "form-control" %>
     </div>
-    <div class="col-3">
-      <div class="lable">
-        <%= t "admin.category" %>
-      </div>
-      <%= collection_select(nil, :category_id, Category.all, :id, :name, {selected: params[:category_id], prompt: true}, class: "form-control")%>
+    <div class="col-5 lable-form">
+      <%= f.label  t "search_admin.name_category" %>
+      <%= f.search_field :category_name_cont, class: "form-control" %>
     </div>
-     <div class="col-6">
+    <div class="col-5 lable-form">
+      <%= f.label t "search_admin.price_gteq" %>
+      <%= f.number_field :price_gteq, class: "form-control" %><br>
+    </div>
+    <div class="col-5 lable-form">
+      <%= f.label  t "search_admin.price_lteq", class: "lable-form"  %>
+      <%= f.number_field :price_lteq, class: "form-control" %><br>
      </div>
+    <div class="col-5 lable-form">
+      <%= f.label  t "search_admin.create_at_gteq" %>
+      <%= f.date_field :created_at_gteq, value: "%Y/%D/%M", class: "form-control" %><br>
+    </div>
+    <div class="col-5 lable-form">
+      <%= f.label  t "search_admin.create_at_lteq" %>
+      <%= f.date_field :created_at_lteq, value: "%Y/%D/%M", class: "form-control" %><br>
+    </div>
   </div>
   <%= submit_tag t("admin.submid") , class: "btn btn-primary btn-sm mt-2" %>
 <% end %>
+

@@ -4,8 +4,12 @@ class Admin::OrdersController < Admin::AdminsController
 
   def index
     @title = t "orders.all"
-    @orders = Order.includes(:order_details, :user)
-                   .recent_orders.page(params[:page])
+    @q = Order.ransack(params[:q])
+    show_orders
+    return unless @orders.empty?
+
+    flash.now[:warning] = t "admin_product.not_find"
+    @orders = Order.recent_orders.page(params[:page])
                    .per(Settings.page_record_medium_10)
   end
 
@@ -45,6 +49,11 @@ class Admin::OrdersController < Admin::AdminsController
   end
 
   private
+
+  def show_orders
+    @orders = @q.result.includes(:order_details, :user).page(params[:page])
+                .per(Settings.page_record_medium_10)
+  end
 
   def load_order
     @order = Order.find_by(id: params[:id])

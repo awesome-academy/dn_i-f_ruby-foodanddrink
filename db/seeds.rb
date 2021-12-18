@@ -12,7 +12,7 @@
 #         content_type: "image/jpg")
 #     u.save!
 
-# category
+# # category
 # 10.times do |n|
 #   name = Faker::Food.ingredient
 #   Category.create!(name: name)
@@ -33,27 +33,27 @@
 # end
 
 
-# User.all.sample(10).each do |user|
-#   product = Product.all.sample(2)
-#   address = user.addresses.sample(1)
-#   order = user.orders.build(
-#     address_id: 1,
-#     total_price: product[0].price)
-#   order.order_details.build(
-#     quantity: 2,
-#     actual_price: product[0].price,
-#     product_id: product[0].id)
-#   order.save
-# end
+User.all.sample(10).each do |user|
+  product = Product.all.sample(2)
+  address = user.addresses.sample(1)
+  order = user.orders.build(
+    address_id: 1,
+    total_price: product[0].price)
+  order.order_details.build(
+    quantity: 2,
+    actual_price: product[0].price,
+    product_id: product[0].id)
+  order.save
+end
 
-User.create!(
-  email: "phikhanhb7@gmail.com",
-  name: "Nguyen Phi Khanh",
-  role: 1,
-  password: "123456",
-  password_confirmation: "123456",
-  status: true
-)
+# User.create!(
+#   email: "phikhanhb7@gmail.com",
+#   name: "Nguyen Phi Khanh",
+#   role: 1,
+#   password: "123456",
+#   password_confirmation: "123456",
+#   status: true
+# )
 
 # 10.times do |n|
 #   name = Faker::Name.unique.name

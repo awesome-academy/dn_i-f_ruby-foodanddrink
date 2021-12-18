@@ -4,14 +4,13 @@ class Admin::ProductsController < Admin::AdminsController
 
   def index
     @title = t "admin_product.title"
-    search
-    if @products.empty?
-      flash.now[:warning] = t "admin_product.not_find"
-      @products = Product.recent.page(params[:page])
-                         .per(Settings.page_record_medium_10)
-    end
-    @products = @products.recent.page(params[:page])
-                         .per(Settings.page_record_medium_10)
+    @q = Product.ransack(params[:q], auth_object: set_ransack_auth_object)
+    show_products
+    return unless @products.empty?
+
+    flash.now[:warning] = t "admin_product.not_find"
+    @products = Product.recent.page(params[:page])
+                       .per(Settings.page_record_medium_10)
   end
 
   def show
@@ -66,6 +65,15 @@ class Admin::ProductsController < Admin::AdminsController
 
   private
 
+  def set_ransack_auth_object
+    current_user&.admin? ? :admin : nil
+  end
+
+  def show_products
+    @products = @q.result.includes(:category).page(params[:page])
+                  .per(Settings.page_record_medium_10)
+  end
+
   def product_params
     params.require(:product)
           .permit(:name, :price, :description, :quantity,
@@ -83,10 +91,5 @@ class Admin::ProductsController < Admin::AdminsController
 
   def load_order_details
     @order_detail = OrderDetail.find_by(product_id: @product.id)
-  end
-
-  def search
-    @products = Product.find_name(params[:name])
-                       .search_category(params[:category_id])
   end
 end

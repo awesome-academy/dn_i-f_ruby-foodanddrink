@@ -6,6 +6,19 @@
     </div>
   </div>
 </div>
+<%= search_form_for [:admin,@q] do |f| %>
+  <div class="row">
+    <div class="col-5 lable-form">
+      <%= f.label t "search_admin.create_at_gteq" %>
+      <%= f.date_field :created_at_gteq, value: "%Y/%D/%M", class: "form-control" %><br>
+    </div>
+    <div class="col-5 lable-form">
+      <%= f.label t "search_admin.create_at_lteq" %>
+      <%= f.date_field :created_at_lteq, value: "%Y/%D/%M", class: "form-control" %><br>
+    </div>
+  </div>
+  <%= submit_tag t("admin.submid") , class: "btn btn-primary btn-sm ml-4" %>
+<% end %>
 <div class="row">
   <div class="col-md-12 col-sm-12 ">
     <% if @orders.any? %>
@@ -15,7 +28,7 @@
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th><%= t "orders.fullname" %></th>
+                  <th><%= sort_link(@q, :user_name, t("orders.fullname"), default_order: :desc) %></th>
                   <th><%= t "orders.phone" %></th>
                   <th><%= t "orders.address" %></th>
                   <th><%= t "orders.created_order" %></th>
