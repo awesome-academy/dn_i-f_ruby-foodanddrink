@@ -24,7 +24,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
           expect(flash[:danger]).to eq I18n.t("no_permission")
         end
         it "redirect to login_path" do
-          expect(response).to redirect_to login_path
+          expect(response).to redirect_to root_url
         end
       end
 

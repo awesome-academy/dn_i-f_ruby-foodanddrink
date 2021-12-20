@@ -1,5 +1,5 @@
 require "rails_helper"
-
+require("pry")
 RSpec.describe Admin::OrdersController, type: :controller do
   describe "GET #index" do
     context "when not log in" do
@@ -24,7 +24,7 @@ RSpec.describe Admin::OrdersController, type: :controller do
           expect(flash[:danger]).to eq I18n.t("no_permission")
         end
         it "redirect to new_user_session_path" do
-          expect(response).to redirect_to login_path
+          expect(response).to redirect_to root_url
         end
       end
 

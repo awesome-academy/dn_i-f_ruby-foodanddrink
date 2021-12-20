@@ -5,6 +5,21 @@ class ApplicationController < ActionController::Base
   before_action :initializ_session
   include ProductsHelper
 
+  rescue_from CanCan::AccessDenied do |_exception|
+    flash[:danger] = t "no_permission"
+    redirect_to root_url
+  end
+
+  protected
+
+  def after_sign_in_path_for resource_or_scope
+    if current_user&.admin?
+      stored_location_for(resource_or_scope) || admin_root_path
+    else
+      stored_location_for(resource_or_scope) || root_path
+    end
+  end
+
   private
 
   def set_locale
