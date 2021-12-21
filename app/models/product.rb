@@ -8,11 +8,20 @@ class Product < ApplicationRecord
 
   scope :recent, ->{order created_at: :DESC}
   scope :list_product, ->(id){where id: id}
-  scope :find_name, ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
-  scope :search_category,
-        (lambda do |category_id|
-          where(category_id: category_id) if category_id.present?
-        end)
+
+  ransack_alias :product, :name_or_description
+  ransacker :created_at, type: :date do
+    Arel.sql("date(created_at)")
+  end
+
+  def self.ransackable_attributes auth_object = nil
+    if auth_object == :admin
+      super
+    else
+      super & %w(product name description price)
+    end
+  end
+
   delegate :name, to: :category, prefix: true
 
   validates :name, presence: true,

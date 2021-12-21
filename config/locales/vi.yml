@@ -206,3 +206,10 @@ vi:
     cancel_account: "Hủy tài khoản"
     back: "Trở lại"
     you_sure: "Bạn có chắc chắn ?"
+  search_admin:
+    name_description: "Tên hoặc mô tả :"
+    price_gteq: "Giá >= :"
+    price_lteq: "Giá <= :"
+    create_at_gteq: "Ngày tạo >= :"
+    create_at_lteq: "Ngày tạo <= :"
+    name_category: "Tên loại :"

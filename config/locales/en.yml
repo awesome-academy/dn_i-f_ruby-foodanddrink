@@ -197,3 +197,10 @@ en:
     cancel_account: "Cancel account"
     back: "Back"
     you_sure: "Are you sure ?"
+  search_admin:
+    name_description: "Name or Description :"
+    price_gteq: "Price >= :"
+    price_lteq: "Price <= :"
+    create_at_gteq: "Create at >= :"
+    create_at_lteq: "Create at <= :"
+    name_category: "Name category :"
