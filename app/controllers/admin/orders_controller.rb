@@ -51,8 +51,8 @@ class Admin::OrdersController < Admin::AdminsController
   private
 
   def show_orders
-    @orders = @q.result.includes(:order_details, :user).page(params[:page])
-                .per(Settings.page_record_medium_10)
+    @orders = @q.result.includes(:order_details, :user).recent_orders
+                .page(params[:page]).per(Settings.page_record_medium_10)
   end
 
   def load_order

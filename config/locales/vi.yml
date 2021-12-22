@@ -223,3 +223,5 @@ vi:
     order_year: "Số đơn theo năm "
     statistics_order: "Thống kê đơn hàng"
     statistics: "Thống kê"
+  register_facebook: "Đăng nhập với tài khoản Facebook"
+  register_google: "Đăng nhập với tài khoản Google"

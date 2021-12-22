@@ -28,8 +28,8 @@ vi:
       password_change:
         subject: "Mật khẩu đã được thay đổi"
     omniauth_callbacks:
-      failure: "Không thể xác thực bạn từ% {kind} vì \ % { reason} \"."
-      success: "Đã xác thực thành công từ tài khoản% {kind}."
+      failure: "Không thể xác thực bạn từ %{kind} vì \ %{ reason} \"."
+      success: "Đã xác thực thành công từ tài khoản %{kind}."
     passwords:
       no_token: "Bạn không thể truy cập trang này nếu không nhận được email đặt lại mật khẩu. Nếu bạn đến từ email đặt lại mật khẩu, vui lòng đảm bảo rằng bạn đã sử dụng URL đầy đủ được cung cấp."
       send_instructions: "Bạn sẽ nhận được email hướng dẫn về cách đặt lại mật khẩu sau vài phút."

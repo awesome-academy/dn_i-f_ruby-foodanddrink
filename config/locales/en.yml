@@ -214,3 +214,6 @@ en:
     order_year: "Number of orders by year "
     statistics_order: "Order statistics"
     statistics: "Statistics"
+  register_facebook: "Register with Facebook"
+  register_google: "Register with Google"
+
