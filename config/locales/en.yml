@@ -100,7 +100,7 @@ en:
       own: "%H:%M:%S, %d %B %Y"
       default: "%d-%m-%Y"
       long: "%d %B, %Y"
-      short: "%d %b"
+      short: "%b %Y"
   order_mailer:
     hello: "Hello %{name}"
     content:
@@ -204,3 +204,13 @@ en:
     create_at_gteq: "Create at >= :"
     create_at_lteq: "Create at <= :"
     name_category: "Name category :"
+  chartkick:
+    status: "Status Order"
+    money_week: "Revenue by week "
+    money_month: "Revenue by month "
+    money_year: "Revenue by year "
+    order_month: "Number of orders by week "
+    order_week: "Number of orders by month "
+    order_year: "Number of orders by year "
+    statistics_order: "Order statistics"
+    statistics: "Statistics"

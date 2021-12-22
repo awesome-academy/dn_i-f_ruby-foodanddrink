@@ -17,6 +17,10 @@ Rails.application.routes.draw do
           delete :remove_image
         end
       end
+      resources :statistics, only: %i(index)
+      get :order_status, to: "statistics#order_status"
+      get :order_total_money, to: "statistics#order_total_money"
+      get :count_order, to: "statistics#count_order"
     end
     root "products#home"
 

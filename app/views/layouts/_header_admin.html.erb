@@ -60,6 +60,19 @@
       </div>
       <div class="menu_section">
         <ul class="nav side-menu">
+          <li>
+            <a>
+              <%= t "chartkick.statistics" %>
+              <span class="fa fa-chevron-down"></span>
+            </a>
+            <ul class="nav child_menu">
+              <li><%= link_to t("chartkick.statistics_order"), admin_statistics_path %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="menu_section">
+        <ul class="nav side-menu">
           <li><%= link_to t("logout"), signout_path, method: "delete" %></li>
         </ul>
       </div>

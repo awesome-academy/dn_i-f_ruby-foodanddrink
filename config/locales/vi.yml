@@ -107,7 +107,7 @@ vi:
       own: "%H:%M:%S, %d %B %Y"
       default: "%d-%m-%Y"
       long: "%d %B, %Y"
-      short: "%d %b"
+      short: "%b %Y"
   order_mailer:
     hello: "Xin chào %{name}"
     title: "Bạn nhận được một thông báo từ bên nhà cung cấp !"
@@ -213,3 +213,13 @@ vi:
     create_at_gteq: "Ngày tạo >= :"
     create_at_lteq: "Ngày tạo <= :"
     name_category: "Tên loại :"
+  chartkick:
+    status: "Trạng thái đơn hàng"
+    money_week: "Doanh thu theo tuần "
+    money_month: "Doanh thu theo tháng "
+    money_year: "Doanh thu theo năm "
+    order_week: "Số đơn theo tuần "
+    order_month: "Số đơn theo tháng "
+    order_year: "Số đơn theo năm "
+    statistics_order: "Thống kê đơn hàng"
+    statistics: "Thống kê"
