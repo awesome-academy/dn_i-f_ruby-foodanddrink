@@ -10,11 +10,11 @@
   <td>
     <%= link_to t("orders.view"), admin_order_path(order), class: "btn btn-primary btn-sm" %>
     <% if order.open? %>
-      <%= link_to t("orders.approve"), approve_admin_order_path(order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-success btn-sm" %>
-      <%= link_to t("orders.reject"), reject_admin_order_path(order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" %>
+      <%= button_to t("orders.approve"), approve_admin_order_path(order), method: :put, data: { confirm: t("edit_product.you_sure") }, class: "btn btn-success btn-sm" %>
+      <%= button_to t("orders.reject"), reject_admin_order_path(order), method: :put, data: { confirm: t("edit_product.you_sure") }, class: "btn btn-danger btn-sm" %>
     <% end %>
     <% if order.confirmed? %>
-      <%= link_to t("orders.cancel"), reject_admin_order_path(order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" %>
+      <%= button_to t("orders.cancel"), reject_admin_order_path(order), method: :put, data: { confirm: t("edit_product.you_sure") }, class: "btn btn-danger btn-sm" %>
     <% end %>
   </td>
 </tr>

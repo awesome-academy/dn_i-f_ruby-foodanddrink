@@ -11,6 +11,7 @@ class Order < ApplicationRecord
   }
 
   scope :recent_orders, ->{order created_at: :desc}
+  scope :confirmed, ->{where status: :confirmed}
   delegate :name, :email, to: :user, prefix: true
   delegate :phone, :address, to: :address, prefix: true
 end

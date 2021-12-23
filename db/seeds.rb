@@ -38,7 +38,7 @@ User.all.sample(10).each do |user|
   address = user.addresses.sample(1)
   order = user.orders.build(
     address_id: 1,
-    total_price: product[0].price)
+    total_price: rand(10000...50000))
   order.order_details.build(
     quantity: 2,
     actual_price: product[0].price,

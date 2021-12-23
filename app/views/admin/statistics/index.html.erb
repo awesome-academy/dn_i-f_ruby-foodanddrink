@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class = "text-center font-weight-bold"><%= t "chartkick.statistics_order" %></h1>
+  <div>
+    <h3 class="text-center mt-5 font-weight-bold"><%= t "chartkick.status" %></h3>
+    <%= pie_chart admin_order_status_path %>
+  </div>
+  <div>
+    <h3 class="text-center mt-5 font-weight-bold"><%= t "chartkick.money_week" %></h3>
+    <%= line_chart admin_order_total_money_path(type: "week"), thousands: ".", suffix: " vnđ" %>
+  </div>
+  <div>
+    <h3 class="text-center mt-5 font-weight-bold"><%= t "chartkick.money_month" %></h3>
+    <%= line_chart admin_order_total_money_path(type: "month"), thousands: ".", suffix: " vnđ" %>
+  </div>
+  <div>
+     <h3 class="text-center mt-5 font-weight-bold"><%= t "chartkick.money_year" %></h3>
+    <%= line_chart admin_order_total_money_path(type: "year"), thousands: ".", suffix: " vnđ" %>
+  </div>
+  <div>
+    <h3 class="text-center mt-5 font-weight-bold"><%= t "chartkick.order_week" %></h3>
+    <%= line_chart admin_count_order_path(type: "week") %>
+  </div>
+  <div>
+    <h3 class="text-center mt-5 font-weight-bold"><%= t "chartkick.order_month" %></h3>
+    <%= column_chart admin_count_order_path(type: "month") %>
+  </div>
+  <div>
+    <h3 class="text-center mt-5 font-weight-bold"><%= t "chartkick.order_year" %></h3>
+    <%= pie_chart admin_count_order_path(type: "year"), suffix: "%" %>
+  </div>
+</div>
