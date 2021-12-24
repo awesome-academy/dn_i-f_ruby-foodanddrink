@@ -70,7 +70,7 @@ class Admin::ProductsController < Admin::AdminsController
   end
 
   def show_products
-    @products = @q.result.includes(:category).page(params[:page])
+    @products = @q.result.includes(:category).recent.page(params[:page])
                   .per(Settings.page_record_medium_10)
   end
 

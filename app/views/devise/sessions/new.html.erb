@@ -25,5 +25,7 @@
   <% end %>
 
   <%= render "devise/shared/links" %>
+  <%= link_to t("register_facebook"), user_facebook_omniauth_authorize_path, method: :post %><br>
+  <%= link_to t("register_google"), user_google_oauth2_omniauth_authorize_path, method: :post %><br>
 </div>
 

@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize user
-    can %i(home read), Product
+    can %i(home show), Product
 
     return if user.blank?
 
